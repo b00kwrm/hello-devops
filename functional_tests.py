@@ -12,7 +12,7 @@ class NewVisitorTest(unittest.TestCase):
 
     def test_can_get_hello_world(self):
         # Edith goes to the homepage.  
-        self.browser.get('http://localhost:5000')
+        self.browser.get('http://localhost:8000')
 
         # She notices the title page mentions hello world.
         self.assertIn('hello world', self.browser.title)
