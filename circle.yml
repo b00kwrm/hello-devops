@@ -24,10 +24,10 @@ deployment:
     ->
       docker login -e ${DOCKER_EMAIL}
       -u ${DOCKER_USER} -p ${DOCKER_PASS}
-    - echo ${DOCKER_USER}/${DOCKER_REPO}:${CIRCLE_TAG}
+      - echo ${DOCKER_USER}/${DOCKER_REPO}:${CIRCLE_TAG}
 
-    - docker build -t ${DOCKER_REPO}/{CIRCLE_PROJECT_REPONAME}
+      - docker build -t ${DOCKER_REPO}/{CIRCLE_PROJECT_REPONAME}
     # write the sha256sum to aan artifact to make image verification easier
     #- docker images --no-trunc | awk '/^app/ {print $3} |
     #tee $CIRCLE_ARTIFACTS/docker-image-sha256sum.txt
-   - docker push ${DOCKER_REPO}/$CIRCLE_PROJECT_REPONAME}
+     - docker push ${DOCKER_REPO}/$CIRCLE_PROJECT_REPONAME}
