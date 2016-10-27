@@ -11,7 +11,7 @@ machine:
 
 test:
   override:
-      - python funcational_tests.py
+      - python functional_tests.py
 
 
 
