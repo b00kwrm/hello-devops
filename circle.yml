@@ -6,13 +6,14 @@
 # DOCKER_REPO
 
 machine:
-    services:
+  python:
+    version: python-3.5.2
+  services:
     - docker
 
 test:
   override:
-    ->
-      python functional_test.py
+      ./functional_test.py
 
 deployment:
   hub_latest:
