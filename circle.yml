@@ -8,26 +8,10 @@
 machine:
   python:
     version: python-3.5.2
-  services:
-    - docker
 
 test:
   override:
-      ./functional_test.py
+      - python funcational_tests.py
 
-deployment:
-  hub_latest:
-  # appropriately tag and push the container to dockerhub
-  # only when on the master branch
-  branch: "master"
-  commands:
-    ->
-      docker login -e ${DOCKER_EMAIL}
-      -u ${DOCKER_USER} -p ${DOCKER_PASS}
-      - echo ${DOCKER_USER}/${DOCKER_REPO}:${CIRCLE_TAG}
 
-      - docker build -t ${DOCKER_REPO}/{CIRCLE_PROJECT_REPONAME}
-    # write the sha256sum to aan artifact to make image verification easier
-    #- docker images --no-trunc | awk '/^app/ {print $3} |
-    #tee $CIRCLE_ARTIFACTS/docker-image-sha256sum.txt
-     - docker push ${DOCKER_REPO}/$CIRCLE_PROJECT_REPONAME}
+
