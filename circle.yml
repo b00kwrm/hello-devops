@@ -11,7 +11,7 @@ machine:
 
 dependencies:
   pre:
-    - sudo apt-get update; sudo apt-get install firefoxdriver
+    - sudo apt-get update; sudo apt-get install selenium-firefoxdriver
     
 test:
   override:
