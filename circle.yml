@@ -11,7 +11,7 @@ machine:
 
 test:
   pre:
-    - gunicorn3 hello:app --daemon
+    - gunicorn hello:app --daemon
   override:
     - python functional_tests.py
 
