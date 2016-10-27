@@ -12,9 +12,10 @@ machine:
 
 
 test:
+  pre:
+    - python hello.py      
   override:
-      - python hello.py
-      - python functional_tests.py
+    - python functional_tests.py
 
 
 
