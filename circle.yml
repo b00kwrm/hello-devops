@@ -18,7 +18,7 @@ machine:
 
 test:
   override:
-    - docker run -d -p 8000:8000 b00kwrm/hello; sleep 10
+    - docker run -d -p 8000:8000 b00kwrm/hello
     - python functional_tests.py
 
 deployment:
