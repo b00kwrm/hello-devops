@@ -10,8 +10,8 @@ machine:
     version: 3.5.2
 
 dependencies:
-  post:
-    sudo apt-get update; sudo apt-get install gunicorn3
+  pre:
+    - sudo apt-get update; sudo apt-get install gunicorn3
 test:
   pre:
     - gunicorn3 hello:app --daemon
