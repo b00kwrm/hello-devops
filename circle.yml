@@ -11,7 +11,7 @@ dependencies:
     - docker build -t b00kwrm/hello .
     - wget https://github.com/mozilla/geckodriver/releases/download/v0.11.1/geckodriver-v0.11.1-linux64.tar.gz
     - cp geckodriver-v0.11.1-linux64.tar.gz /home/ubuntu/virtualenvs/venv-3.5.2/bin
-    - cd /home/ubuntu/virtualenvs/venv-3.5.2/bin && tar xzf tar.gztar xzf geckodriver-v0.11.1-linux64.tar.gz
+    - cd /home/ubuntu/virtualenvs/venv-3.5.2/bin && tar xzf geckodriver-v0.11.1-linux64.tar.gz
     - export PATH=$PATH:/home/ubuntu/hello-devops
     - echo $PATH
 
