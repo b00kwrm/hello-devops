@@ -5,15 +5,27 @@
 # DOCKER_PASS
 # DOCKER_REPO
 
+dependencies:
+  override:
+    - docker info
+    - docker build -t b00kwrm/hello .
+
 machine:
   python:
     version: 3.5.2
+  services:
+    - docker
 
 test:
-  pre:
-    - gunicorn hello:app --daemon
   override:
+    - docker run -d -p 8000:8000 b00krm/hello; sleep 10
     - python functional_tests.py
 
+deployment:
+  hub:
+    branch: master
+    commands:
+    - docker login -e $DOCKER_EMAIL -u DOCKER_USER -p $DOCKER_PASS
+    - docker push b00kwrm/hello
 
 
